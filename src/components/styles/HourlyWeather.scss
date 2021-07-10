@@ -1,0 +1,16 @@
+@import "./colors.scss";
+
+.weather-container-hourly {
+  display: flex;
+  overflow: scroll;
+  .weather-column-hourly {
+    margin-right: 1em;
+    min-width: 80px;
+    border-radius: 8px;
+    &:hover {
+      background-color: $primary-white;
+      color: $secondary-black;
+      transition: 0.6s ease-out;
+    }
+  }
+}

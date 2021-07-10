@@ -47,7 +47,7 @@ function WeatherApp() {
   return (
     <div className="weatherapp-container">
       <CurrentWeather weatherData={weatherData?.current} />
-      <form onSubmit={handleOnCityNameSubmit}>
+      <form onSubmit={handleOnCityNameSubmit} className="search-bar-container">
         <input
           type="text"
           className="search-bar"

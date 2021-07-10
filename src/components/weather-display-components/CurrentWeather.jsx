@@ -10,17 +10,17 @@ function CurrentWeather({ weatherData }) {
   return (
     <div className="weather-container-current">
       <p className="date-current">
-        {composeDateUsingTimestamp(DATETIME_FORMAT.dateAndTime)}
+        {composeDateUsingTimestamp(weatherData.dt, DATETIME_FORMAT.dateAndTime)}
       </p>
-      <p className="temp-current">{weatherData?.temp}°c</p>
+      <p className="temp-current">{weatherData.temp}°c</p>
       <div className="horizontal-elements-current">
         <p className="feels-like-current">
           Feels like {weatherData?.feels_like}°c &nbsp;
         </p>
-        <p className="humidity-current"> / Humidity {weatherData?.humidity}%</p>
+        <p className="humidity-current"> / Humidity {weatherData.humidity}%</p>
       </div>
       <p className="weather-description-current">
-        {weatherData?.weather[0].description}
+        {weatherData.weather[0].description}
       </p>
     </div>
   );

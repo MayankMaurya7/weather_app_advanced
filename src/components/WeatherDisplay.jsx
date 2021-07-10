@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import DailyWeather from "./weather-display-components/DailyWeather";
+import HourlyWeather from "./weather-display-components/HourlyWeather";
 
 const USER_CHOICE = {
   daily: "daily",
@@ -12,15 +14,11 @@ export const WeatherDisplay = (props) => {
   const renderViewBasedOnUserChoice = () => {
     switch (userChoice) {
       case USER_CHOICE.daily: {
-        return (
-          <p style={{ color: "red" }}>{JSON.stringify(weatherData.daily)}</p>
-        );
+        return <DailyWeather weatherData={weatherData.daily} />;
       }
       default:
       case USER_CHOICE.hourly: {
-        return (
-          <p style={{ color: "blue" }}>{JSON.stringify(weatherData.hourly)}</p>
-        );
+        return <HourlyWeather weatherData={weatherData.hourly} />;
       }
     }
   };

@@ -70,19 +70,19 @@ export const DAYS = [
 ];
 
 export const composeDateUsingTimestamp = (
-  //   timestamp = "",
+  timestamp,
   format = DATETIME_FORMAT.date
 ) => {
-  const date = new Date().getDate();
-  const day = DAYS[new Date().getDay()];
-  const month = MONTHS[new Date().getMonth()];
-  const hours = new Date().getHours();
-  const minutes = new Date().getMinutes();
+  const date = new Date(timestamp * 1000).getDate();
+  const day = DAYS[new Date(timestamp * 1000).getDay()];
+  const month = MONTHS[new Date(timestamp * 1000).getMonth()];
+  const hours = new Date(timestamp * 1000).getHours();
+  const minutes = new Date(timestamp * 1000).getMinutes();
 
   const composeTime = () => {
     const composeHours = hours >= 12 ? hours - 12 : hours;
     const amPm = hours >= 12 ? "PM" : "AM";
-    return `${composeHours}:${minutes} ${amPm}`;
+    return `${" "}${composeHours}:${minutes} ${amPm}`;
   };
 
   const composeDate = () => `${day} ${date} ${month}`;
