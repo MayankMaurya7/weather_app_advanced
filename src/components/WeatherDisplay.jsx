@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const USER_CHOICE = {
-  current: "current",
   daily: "daily",
   hourly: "hourly",
 };
@@ -17,39 +16,28 @@ export const WeatherDisplay = (props) => {
           <p style={{ color: "red" }}>{JSON.stringify(weatherData.daily)}</p>
         );
       }
+      default:
       case USER_CHOICE.hourly: {
         return (
           <p style={{ color: "blue" }}>{JSON.stringify(weatherData.hourly)}</p>
         );
       }
-      default:
-      case USER_CHOICE.current: {
-        return (
-          <p style={{ color: "green" }}>
-            {JSON.stringify(weatherData.current)}
-          </p>
-        );
-      }
     }
   };
-
-  if (!weatherData) return <p>loading</p>;
-
-  if (weatherData.error) return <p>{weatherData.error}</p>;
 
   const renderChoices = () => {
     return (
       <>
-        <button onClick={() => setUserChoice(USER_CHOICE.current)}>
-          CURRENT
-        </button>
-        <button onClick={() => setUserChoice(USER_CHOICE.daily)}>DAILY</button>
         <button onClick={() => setUserChoice(USER_CHOICE.hourly)}>
           HOURLY
         </button>
+        <button onClick={() => setUserChoice(USER_CHOICE.daily)}>DAILY</button>
       </>
     );
   };
+  if (!weatherData) return <p>loading</p>;
+
+  if (weatherData.error) return <p>{weatherData.error}</p>;
 
   return (
     <>
