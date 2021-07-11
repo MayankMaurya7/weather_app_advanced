@@ -18,15 +18,11 @@ The App provides feature for user to switch between Dark mode or Light mode(defa
 
 
 ## Instructions
+Make sure that your present working directory is ./weather_app__provakil
 
-1. First clone this repository.
 
-    ```
-    $ git clone https://github.com/MayankMaurya7/weather_app__provakil.git 
 
-    ```
-
-2. Install dependencies. Make sure you already have nodejs & npm installed in your system.
+1. Install dependencies. Make sure you already have nodejs & npm installed in your system.
 
     ```
     $ npm install # or yarn
