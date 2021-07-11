@@ -12,6 +12,9 @@ function WeatherApp() {
   const { loaded: isLocationLoaded, coordinates } = useGeoLocation();
   const [city, setCity] = useState();
   const [weatherData, setWeatherData] = useState();
+  const [isThemeDark, changeThemeMode] = useState(false);
+  const [buttonLable, setButonLable] = useState("Switch to Dark Mode");
+  const [themeClass, setThemeClass] = useState("weatherapp-container");
 
   // When component loads for the first time.
   useEffect(() => {
@@ -42,10 +45,28 @@ function WeatherApp() {
       });
   };
 
+  const handleThemeChange = () => {
+    if (!isThemeDark) {
+      changeThemeMode(true);
+      setButonLable("Switch to Light Mode");
+      setThemeClass("weatherapp-container dark-mode");
+    } else {
+      changeThemeMode(false);
+      setButonLable("Switch to Dark Mode");
+      setThemeClass("weatherapp-container");
+    }
+  };
+
   if (isLocationLoaded === false) return "Location Loading";
 
   return (
-    <div className="weatherapp-container">
+    <div className={themeClass}>
+      <button
+        onClick={() => handleThemeChange()}
+        className="theme-control-button"
+      >
+        {buttonLable}
+      </button>
       <CurrentWeather weatherData={weatherData?.current} />
       <form onSubmit={handleOnCityNameSubmit} className="search-bar-container">
         <input
@@ -55,7 +76,9 @@ function WeatherApp() {
           onChange={(e) => setCity(e.target.value)}
           value={city}
         />
-        <button type="submit">Search</button>
+        <button type="submit" className="search-button">
+          Search
+        </button>
       </form>
       <WeatherDisplay weatherData={weatherData} />
     </div>

@@ -1,5 +1,6 @@
 $primary-dark-blue: rgb(26, 118, 210);
 $primary-light-blue: rgb(104, 174, 240);
+$secondary-light-blue: dodgerBlue;
 
 $primary-teal: rgb(48, 211, 186);
 $secondary-teal: #77e6d5;
@@ -16,3 +17,24 @@ $primary-white: #ffffff;
 $primary-red: #ff3939;
 
 $primary-green: #4bb543;
+
+@mixin box-shadow {
+  box-shadow: 0 0 8px 0 $secondary-light-blue;
+}
+
+::-webkit-scrollbar {
+  height: 0.7em;
+}
+
+::-webkit-scrollbar-track {
+  background: $primary-light-blue;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-white;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+}

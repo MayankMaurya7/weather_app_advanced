@@ -25,12 +25,20 @@ export const WeatherDisplay = (props) => {
 
   const renderChoices = () => {
     return (
-      <>
-        <button onClick={() => setUserChoice(USER_CHOICE.hourly)}>
+      <div className="user-choice">
+        <button
+          className="user-choice-buttons hourly-button"
+          onClick={() => setUserChoice(USER_CHOICE.hourly)}
+        >
           HOURLY
         </button>
-        <button onClick={() => setUserChoice(USER_CHOICE.daily)}>DAILY</button>
-      </>
+        <button
+          className="user-choice-buttons daily-button"
+          onClick={() => setUserChoice(USER_CHOICE.daily)}
+        >
+          DAILY
+        </button>
+      </div>
     );
   };
   if (!weatherData) return <p>loading</p>;

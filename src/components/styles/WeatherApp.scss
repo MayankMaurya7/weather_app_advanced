@@ -4,4 +4,89 @@
   text-align: center;
   background-color: $primary-light-blue;
   color: $primary-white;
+  height: 100vh;
+  position: relative;
+  .theme-control-button {
+    font-size: 1.1em;
+    padding: 5px;
+    border-radius: 50px;
+    outline: none;
+    color: $primary-white;
+    background-color: $secondary-black;
+    border: 1px solid $primary-white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  .search-bar-container {
+    height: 3em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // position: relative;
+    .search-bar {
+      min-width: 30vw;
+      height: 100%;
+      border-radius: 50px 0px 0px 50px;
+      border: 1px solid $secondary-light-blue;
+      font-size: 1.2em;
+      text-align: center;
+      @include box-shadow;
+      &:focus {
+        outline: none;
+        background-color: ghostwhite;
+      }
+    }
+    .search-button {
+      color: $primary-grey;
+      outline: none;
+      border-radius: 0px 50px 50px 0px;
+      height: 110%;
+      border: 1px solid $secondary-light-blue;
+      @include box-shadow;
+      &:focus,
+      &:hover {
+        outline: none;
+        background-color: $primary-light-blue;
+        color: $primary-white;
+        transition: 0.4s ease-in-out;
+      }
+    }
+  }
+  .user-choice {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    .user-choice-buttons {
+      color: $primary-grey;
+      outline: none;
+      width: 50%;
+      height: 100%;
+      border: 1px solid $secondary-light-blue;
+      @include box-shadow;
+      &:focus,
+      &:hover {
+        outline: none;
+        background-color: $primary-light-blue;
+        color: $primary-white;
+        transition: 0.4s ease-in-out;
+      }
+    }
+  }
+}
+
+.dark-mode {
+  background-color: $secondary-black;
+  .theme-control-button {
+    background-color: $secondary-light-blue;
+    border: 1px solid $secondary-light-blue;
+  }
+  ::-webkit-scrollbar-track {
+    background: $secondary-black;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: $secondary-light-blue;
+  }
 }

@@ -2,15 +2,37 @@
 
 .weather-container-hourly {
   display: flex;
-  overflow: scroll;
+  overflow: auto;
+  margin-top: 10vh;
+  padding-bottom: 10vh;
+
   .weather-column-hourly {
     margin-right: 1em;
     min-width: 80px;
     border-radius: 8px;
     &:hover {
       background-color: $primary-white;
-      color: $secondary-black;
+      color: $primary-grey;
       transition: 0.6s ease-out;
     }
   }
 }
+// body::-webkit-scrollbar-thumb {
+//   background-color: red;
+//   // outline: 1px solid slategrey;
+// }
+// .weather-container-hourly::-webkit-scrollbar-track {
+//   display: none;
+// }
+// ::-webkit-scrollbar {
+//   background: $secondary-light-blue;
+// }
+// ::-webkit-scrollbar-track-piece {
+//   background-color: red;
+// }
+// ::-webkit-scrollbar-thumb {
+//   background: $primary-light-blue;
+// }
+// .weather-container-hourly::-webkit-scrollbar-thumb {
+//   background: blue;
+// }
