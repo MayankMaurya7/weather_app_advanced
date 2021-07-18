@@ -1,3 +1,5 @@
+[Check the App here](https://city-weather-details.herokuapp.com/) 
+
 This Weather Dashboard is a Single Page web app built using React.js .
 It uses OpenWeatherMap API to fetch weather details.
 
