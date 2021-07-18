@@ -1,6 +1,6 @@
 export const API = {
   key: "47e923e89c069b26d17710cacc555c17",
-  baseUrl: "http://api.openweathermap.org/data/2.5/",
+  baseUrl: "https://api.openweathermap.org/data/2.5/",
 };
 
 export const getWeatherDetailsBasedOnCoordinates = async (
