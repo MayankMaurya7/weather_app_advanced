@@ -20,6 +20,7 @@ function WeatherApp() {
   useEffect(() => {
     if (!isLocationLoaded) return;
     renderBasedOnCoordinates();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLocationLoaded]);
 
   const handleOnCityNameSubmit = (e) => {
